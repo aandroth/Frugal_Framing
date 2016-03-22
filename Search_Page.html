@@ -24,37 +24,58 @@
     </table>
     <table>
         <?php
-            $directory ="pics\\";
-            $images =  array_merge(glob($directory . "*.png"), glob($directory . "*.jpg"));
-            $count = 0;
-            $limit = 4;
-            $i_width = 400;
-            $i_height = 320;
-            $temp = 0;
-            foreach($images as $image)
-            {
-                if($count == 0)
-                {
-                    echo "<tr>";
-                }
-                /*list($i_width, $i_height) = getimagesize($image);*/
-                $temp = $i_width;
-                $i_width = $i_height;
-                $i_height = $temp;
-                
-                $count += 1;/*$i_width;*/
-                echo "<td><div style=\"width:".$i_width."px;height:".$i_height."px;\"><p2>";
-                /*echo "<td><div style=\"width:320px;height:400px;\"><p2>";*/
-                /*echo "<img src=" . $image ." style=\"width:320px;height:400px;\"/>";*/
-                echo "<img src=" . $image ." style=\"width:".$i_width."px;height:".$i_height."px;\"/>";
-                echo "<p2></div></td>";
-           
-                if($count >= $limit)
-                {
-                    $count =0;
-                    echo "</tr>";
-                }
-            }
+        $directory ="pics\\";
+        $images =  array_merge(glob($directory . "*.png"), glob($directory . "*.jpg"));
+        $count = 0;
+        $limit = 4;
+        $i_width = 400;
+        $i_height = 320;
+        $temp = 0;
+
+        include("../exclude/connection.php");
+
+        $query ="SELECT name, location, width, height FROM gallery";
+
+        $response =@mysqli_query($dbc, $query);
+
+        while($row = mysqli_fetch_array($response))
+        {
+        $temp = $i_width;
+        $i_width = $i_height;
+        $i_height = $temp;
+        <!--
+                    echo "<td><div>";
+                <!--echo "<img src=" . $image ." style=\"width:".$i_width."px;height:".$i_height."px;\"/>";
+                echo "<img src=".location ." style=\"width:". width ."px; height:".height."px;\" />";
+        echo "</div></td>";-->
+        }
+
+        <!--
+         $temp = 0;
+         foreach($images as $image)
+         {
+             if($count == 0)
+             {
+                 echo "<tr>";
+             }
+             /*list($i_width, $i_height) = getimagesize($image);*/
+             $temp = $i_width;
+             $i_width = $i_height;
+             $i_height = $temp;
+
+             $count += 1;/*$i_width;*/
+             echo "<td><div style=\"width:".$i_width."px;height:".$i_height."px;\"><p2>";
+             /*echo "<td><div style=\"width:320px;height:400px;\"><p2>";*/
+             /*echo "<img src=" . $image ." style=\"width:320px;height:400px;\"/>";*/
+             echo "<img src=" . $image ." style=\"width:".$i_width."px;height:".$i_height."px;\"/>";
+             echo "<p2></div></td>";
+
+             if($count >= $limit)
+             {
+                 $count =0;
+                 echo "</tr>";
+             }
+         }-->
         ?>
     </table>
     <p>

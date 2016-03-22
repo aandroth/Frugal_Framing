@@ -1,0 +1,17 @@
+Desired features:
+
+Show Pictures
+Have a Home page: Done
+Have an images page: Done
+
+Allow people to buy pictures
+Have the pictures in a MySQL database
+Have keywords on the pictures for searching
+Have a window where people can select a picture and choose the mats they want
+Have people upload a picture and choose the mats they want
+
+Show pictures:
+
+I now have it where the website shows pictures from a file.
+I also have it where a set limit keeps the pictures from going too far to the right (and off the screen)
+

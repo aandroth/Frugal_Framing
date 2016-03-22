@@ -1,0 +1,47 @@
+﻿body {
+    background-image:url("pics/gcdw.jpg");
+}
+
+h1{
+    margin-top:-1%;
+    color: white;
+    text-align: center;
+    font-size: 600%;
+    font-family:'Comic Sans MS';
+    height:100px;
+}
+
+h6 {
+    color: white;
+    position:absolute;
+    left:32%;
+    top:2%;
+    font-size: 300%;
+    font-family:'Comic Sans MS';
+}
+
+p1{
+    color:blue;
+    border:5px solid blue;
+    margin:0px;
+}
+
+table
+{
+    margin-left:7%;
+}
+
+head
+{
+}
+
+div 
+{
+    
+}
+
+p2
+{
+    display:block;
+    text-align:center;
+}
